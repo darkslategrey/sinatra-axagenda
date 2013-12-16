@@ -9,7 +9,7 @@ Ext.Loader.setConfig({
     //disableCaching: false,
     paths: {
         "Extensible": "./src",
-        "Extensible.example": "../../js"
+	"Extensible.example": "./js"
     }
 });
 
