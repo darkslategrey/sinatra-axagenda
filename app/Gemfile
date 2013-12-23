@@ -1,8 +1,10 @@
 source "https://rubygems.org"
 
-gem 'sinatra', :github => 'sinatra/sinatra'
+gem 'sinatra', '= 1.4.3'
 gem 'activerecord'
 gem 'puma'
 gem 'haml'
 gem 'json'
+gem 'pry'
+gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
 
