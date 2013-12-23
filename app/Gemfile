@@ -14,6 +14,9 @@ group :development do
   gem 'binding_of_caller'
   gem 'thin'
   gem 'foreman'
+  gem 'guard'
+  gem 'shotgun'
+  gem 'guard-shotgun'
 end
 
 group :assets do
