@@ -1,0 +1,29 @@
+je:
+  adapter: mysql2
+  host: localhost
+  username: root
+  password: admin
+  pool: 10
+  # reconnect: false
+  database: jobenfance
+  socket: /var/run/mysqld/mysqld.sock
+
+jd:
+  adapter: mysql2
+  host: localhost
+  username: root
+  password: admin
+  pool: 10
+  # reconnect: false
+  database: jobdependance
+  socket: /var/run/mysqld/mysqld.sock
+
+  
+# axagenda:
+#   host: localhost
+#   username: root
+#   password: admin
+#   adapter: mysql2
+#   database: axagenda
+#   pool: 10
+#   socket: /var/run/mysqld/mysqld.sock

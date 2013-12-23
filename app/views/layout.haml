@@ -1,0 +1,6 @@
+<!DOCTYPE HTML>
+%html{lang: I18n.locale}
+  = haml :'html/head', locals: { assets: locals[:assets] }
+  %body
+    #page.container
+      = yield

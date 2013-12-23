@@ -1,0 +1,20 @@
+
+octopus:
+  shards:
+    je:
+      host: localhost
+      adapter: mysql2
+      username: root
+      password: admin
+      database: jobenfance
+      pool: 10
+      socket: /var/run/mysqld/mysqld.sock
+    jd:
+      host: localhost
+      username: root
+      password: admin
+      adapter: mysql2
+      pool: 10
+      database: jobdependance
+      socket: /var/run/mysqld/mysqld.sock
+

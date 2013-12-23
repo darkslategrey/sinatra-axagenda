@@ -1,10 +1,40 @@
 source "https://rubygems.org"
 
 gem 'sinatra', '= 1.4.3'
-gem 'activerecord'
-gem 'puma'
-gem 'haml'
-gem 'json'
 gem 'pry'
-gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
 
+group :database do
+  gem 'mysql2'
+  gem 'ar-octopus'
+  gem 'activerecord'
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'thin'
+  gem 'foreman'
+end
+
+group :assets do
+  gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
+  gem 'haml'
+  gem 'json'
+  gem 'uglifier'
+  gem 'i18n'
+end
+
+group :production do
+  gem 'puma'
+  gem 'foreman'
+end
+
+group :deployment do
+  gem 'capistrano'
+end
+
+group :testing do
+  gem 'cucumber'
+  gem 'capybara'
+  gem 'rspec'
+end

@@ -1,26 +1,31 @@
 
 class AxAgenda < Sinatra::Base
-  register Sinatra::AssetPack
-# css
-# /css/test-app.css
-# /js/extjs/resources/css/ext-all.css
-# /js/calendar/resources/css/extensible-all.css?_dc=1.6.0-rc.1
-# /js/calendar/examples/examples.css?_dc=1.6.0-rc.1 
 
-# js
-# /js/calendar/Extensible-config.js 
-# /js/calendar/App.js
-# /js/calendar/examples/examples.js?_dc=1.6.0-rc.1
-# /js/calendar/lib/extensible-all-debug.js?_dc=1.6.0-rc.1
-# /js/extjs/locale/ext-lang-fr.js
-# /js/calendar/src/locale/extensible-lang-fr.js?_dc=1.6.0-rc.1
-# /js/extjs/ext-all-debug.js
-# /js/calendar/data/Events.js?_dc=1387210227018
-# /js/calendar/data/Calendars.js?_dc=1387210227020
+  set :environment, ENV['RACK_ENV']
 
-
-  get '/' do
-    send_file File.join(settings.public_folder, 'index.html')
+  # Helper to eval config options in local scope.
+  def self.require_all(dir, opts={})
+    Dir["./#{dir}/*.rb"].each do |f|
+      next if f.index 'deploy.rb'
+      begin
+        eval File.read f
+      rescue Exception => e
+        msg = e.message + " in #{f}."
+        raise e.class.new(msg)
+      end
+    end
   end
+  
+
+  # Recursively require config and helpers.
+  configure { self.require_all 'config'  }
+  helpers   { self.require_all 'helpers' }
+  
+  # Require all available routes.
+  self.require_all 'routes'
+  
+  # Require all database models.
+  Dir["./models/*.rb"].each { |model| require model }
+
 end
 

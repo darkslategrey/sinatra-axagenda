@@ -1,0 +1,11 @@
+%head
+  %title
+    = @title
+  = haml :'html/meta'
+  = haml :'html/html5'
+  // Javascripts.
+  = js :vendor
+  = js :application
+  // Style sheets.
+  = css :vendor, media: 'screen'
+  = css :application, media: 'screen'
