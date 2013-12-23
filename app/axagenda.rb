@@ -1,7 +1,7 @@
 
 class AxAgenda < Sinatra::Base
 
-  set :environment, ENV['RACK_ENV']
+  set :environment, env['RACK_ENV']
 
   # Helper to eval config options in local scope.
   def self.require_all(dir, opts={})
