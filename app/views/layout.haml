@@ -1,6 +1,13 @@
 <!DOCTYPE HTML>
-%html{lang: I18n.locale}
+%html
   = haml :'html/head', locals: { assets: locals[:assets] }
   %body
-    #page.container
-      = yield
+    = yield
+  :javascript
+    var updateLogoDt = function(){
+        document.getElementById('logo-body').innerHTML = new Date().getDate();
+    }
+    updateLogoDt();
+    //setInterval(updateLogoDt, 1000);
+
+

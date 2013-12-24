@@ -44,6 +44,16 @@
 
    headless WebKit browser
 
+* shotgun
+
+	The shotgun command starts one of Rack's supported servers (e.g.,
+	mongrel, thin, webrick) and listens for requests but does not load
+	any part of the actual application. 
+	Each time a request is received, it forks, loads the application
+	in the child process, processes the request, and exits the child
+	process. The result is clean, application-wide reloading of all
+	source files and templates on each request.
+
 
 
 

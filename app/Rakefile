@@ -2,7 +2,7 @@ require 'rubygems'
 require 'bundler'
 require 'rake'
 require 'active_record'
-require 'sinatra/activerecord/rake'
+# require 'sinatra/activerecord/rake'
 # require './app'
 require 'octopus'
 
@@ -15,3 +15,5 @@ ActiveRecord::Base.establish_connection db_config['je']
 
 
 Dir["tasks/*.rake"].sort.each { |ext| load ext }
+require 'jasmine'
+load 'jasmine/tasks/jasmine.rake'

@@ -14,9 +14,9 @@
          * To create the test database structure see ../setup.sql
          */
         public $host     = 'localhost';
-        public $dbname   = 'extensible_demo';
-        public $username = 'extensible_demo';
-        public $password = 'extensible_demo';
+        public $dbname   = 'extensible';
+        public $username = 'root';
+        public $password = 'admin';
     }
     
 ?>

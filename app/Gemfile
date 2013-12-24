@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem 'sinatra', '= 1.4.3'
 gem 'pry'
+gem 'ice_cube'
 
 group :database do
   gem 'mysql2'
@@ -9,7 +10,7 @@ group :database do
   gem 'activerecord'
 end
 
-group :development do
+group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'thin'
@@ -17,6 +18,11 @@ group :development do
   gem 'guard'
   gem 'shotgun'
   gem 'guard-shotgun'
+  gem 'jasmine'
+  gem 'cucumber'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'rspec'
 end
 
 group :assets do
@@ -25,6 +31,7 @@ group :assets do
   gem 'json'
   gem 'uglifier'
   gem 'i18n'
+  gem 'sprockets', '~> 2.0'
 end
 
 group :production do
@@ -36,8 +43,3 @@ group :deployment do
   gem 'capistrano'
 end
 
-group :testing do
-  gem 'cucumber'
-  gem 'capybara'
-  gem 'rspec'
-end
