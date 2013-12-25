@@ -2,7 +2,9 @@ source "https://rubygems.org"
 
 gem 'sinatra', '= 1.4.3'
 gem 'pry'
-gem 'ice_cube'
+gem 'ice_cube' # Time Date managment for recurring events
+gem 'grape'
+
 
 group :database do
   gem 'mysql2'
@@ -11,27 +13,34 @@ group :database do
 end
 
 group :development, :test do
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'thin'
-  gem 'foreman'
-  gem 'guard'
-  gem 'shotgun'
-  gem 'guard-shotgun'
-  gem 'jasmine'
-  gem 'cucumber'
-  gem 'capybara'
-  gem 'poltergeist'
-  gem 'rspec'
+  # gem 'better_errors'
+  # gem 'binding_of_caller'
+  # gem 'thin'
+  # gem 'foreman'
+  # gem 'guard'
+  # gem 'shotgun'
+  # gem 'guard-shotgun'
+  # gem 'jasmine'
+  # gem 'cucumber'
+  # gem 'capybara'
+  # gem 'poltergeist'
+  gem 'guard-minitest'
+  gem 'minitest'
+  gem 'mocha', :require => 'mocha/setup'
+
+  gem 'rack-test', :require => 'rack/test'
+  gem 'simplecov', :require => false
+  gem 'coveralls', :require => false
+  # gem 'rspec'
 end
 
 group :assets do
-  gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
+  # gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
   gem 'haml'
   gem 'json'
   gem 'uglifier'
   gem 'i18n'
-  gem 'sprockets', '~> 2.0'
+  # gem 'sprockets', '~> 2.0'
 end
 
 group :production do

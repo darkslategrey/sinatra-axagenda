@@ -20,9 +20,12 @@ class AxAgenda < Sinatra::Base
   # Recursively require config and helpers.
   configure { self.require_all 'config'  }
   helpers   { self.require_all 'helpers' }
+
   
   # Require all available routes.
   self.require_all 'routes'
+
+  self.require_all 'lib'
   
   # Require all database models.
   Dir["./models/*.rb"].each { |model| require model }

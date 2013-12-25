@@ -1,19 +1,20 @@
-require 'rubygems'
-require 'bundler'
-require 'rake'
-require 'active_record'
+# require 'rubygems'
+# require 'bundler/setup'
+
+# require './axapi'
+# Bundler.require :default, :databases, ENV['RACK_ENV'], :assets, :deployment
+# require 'rake'
+# require 'active_record'
 # require 'sinatra/activerecord/rake'
 # require './app'
-require 'octopus'
+# require 'octopus'
 
-Bundler.setup
+# require 'grape'
+
+# Bundler.require :default
 
 # for migrations (octopus)
-db_config = YAML.load_file('./config/databases.yml')
-ActiveRecord::Base.establish_connection db_config['je']
-
-
+# db_config = YAML.load_file('./config/databases.yml')
+# ActiveRecord::Base.establish_connection db_config['je']
 
 Dir["tasks/*.rake"].sort.each { |ext| load ext }
-require 'jasmine'
-load 'jasmine/tasks/jasmine.rake'

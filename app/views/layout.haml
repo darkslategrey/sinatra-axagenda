@@ -3,11 +3,5 @@
   = haml :'html/head', locals: { assets: locals[:assets] }
   %body
     = yield
-  :javascript
-    var updateLogoDt = function(){
-        document.getElementById('logo-body').innerHTML = new Date().getDate();
-    }
-    updateLogoDt();
-    //setInterval(updateLogoDt, 1000);
 
 

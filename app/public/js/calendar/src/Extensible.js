@@ -40,7 +40,7 @@ Ext.define('Extensible', {
     
     // private
     log: function(s) {
-        //console.log(s);
+        console.log(s);
     },
     
     // private
@@ -390,7 +390,7 @@ Extensible.applyOverrides = function() {
     }
     
     // This was fixed in Ext 4.0.4?
-    Ext.Component.override({
+   Ext.Component.override({
         getId: function() {
             var me = this,
                 xtype;
